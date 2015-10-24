@@ -6,9 +6,11 @@
 //
 //
 
-#ifndef TestCases_hpp
-#define TestCases_hpp
+#include "Solutions.hpp"
 
-#include <stdio.h>
+class TestCaseBase {
+public:
+    static void RunTestCase();
+};
 
-#endif /* TestCases_hpp */
+class TestCase67:public TestCaseBase {public: static void RunTestCase();};

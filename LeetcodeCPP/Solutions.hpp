@@ -6,9 +6,9 @@
 //
 //
 
-#ifndef Solutions_hpp
-#define Solutions_hpp
+#include "AllHeaders.h"
 
-#include <stdio.h>
-
-#endif /* Solutions_hpp */
+class Solution67 {
+public:
+    static string addBinary(string a, string b);
+};

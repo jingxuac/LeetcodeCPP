@@ -6,9 +6,8 @@
 //
 //
 
-#ifndef AllHeaders_h
-#define AllHeaders_h
+#include <iostream>
+#include <stdio.h>
+#include <map>
 
-#include "TC067.hpp"
-
-#endif /* AllHeaders_h */
+using namespace std;
