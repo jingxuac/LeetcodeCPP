@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3A9FF4FE1BDC1E5A009E0F26 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A9FF4FD1BDC1E5A009E0F26 /* main.cpp */; };
+		3A9FF5171BDC2B1D009E0F26 /* TestCases.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A9FF5151BDC2B1D009E0F26 /* TestCases.cpp */; settings = {ASSET_TAGS = (); }; };
+		3A9FF51A1BDC2B30009E0F26 /* Solutions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A9FF5181BDC2B30009E0F26 /* Solutions.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,8 +27,11 @@
 /* Begin PBXFileReference section */
 		3A9FF4FB1BDC1E5A009E0F26 /* LeetcodeCPP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetcodeCPP; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9FF4FD1BDC1E5A009E0F26 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		3A9FF5071BDC2055009E0F26 /* Solutions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Solutions; sourceTree = "<group>"; };
-		3A9FF5081BDC2055009E0F26 /* TestCases */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestCases; sourceTree = "<group>"; };
+		3A9FF5111BDC26B6009E0F26 /* AllHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllHeaders.h; sourceTree = "<group>"; };
+		3A9FF5151BDC2B1D009E0F26 /* TestCases.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestCases.cpp; path = LeetcodeCPP/TestCases.cpp; sourceTree = SOURCE_ROOT; };
+		3A9FF5161BDC2B1D009E0F26 /* TestCases.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = TestCases.hpp; path = LeetcodeCPP/TestCases.hpp; sourceTree = SOURCE_ROOT; };
+		3A9FF5181BDC2B30009E0F26 /* Solutions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Solutions.cpp; sourceTree = "<group>"; };
+		3A9FF5191BDC2B30009E0F26 /* Solutions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Solutions.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +64,12 @@
 		3A9FF4FC1BDC1E5A009E0F26 /* LeetcodeCPP */ = {
 			isa = PBXGroup;
 			children = (
-				3A9FF5071BDC2055009E0F26 /* Solutions */,
-				3A9FF5081BDC2055009E0F26 /* TestCases */,
+				3A9FF5151BDC2B1D009E0F26 /* TestCases.cpp */,
+				3A9FF5161BDC2B1D009E0F26 /* TestCases.hpp */,
+				3A9FF5181BDC2B30009E0F26 /* Solutions.cpp */,
+				3A9FF5191BDC2B30009E0F26 /* Solutions.hpp */,
 				3A9FF4FD1BDC1E5A009E0F26 /* main.cpp */,
+				3A9FF5111BDC26B6009E0F26 /* AllHeaders.h */,
 			);
 			path = LeetcodeCPP;
 			sourceTree = "<group>";
@@ -121,6 +129,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9FF51A1BDC2B30009E0F26 /* Solutions.cpp in Sources */,
+				3A9FF5171BDC2B1D009E0F26 /* TestCases.cpp in Sources */,
 				3A9FF4FE1BDC1E5A009E0F26 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
