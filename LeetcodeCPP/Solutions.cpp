@@ -8,8 +8,30 @@
 
 #include "Solutions.hpp"
 
-string Solution67::addBinary(string a, string b)
-{
+vector<int> Solution1::twoSum(vector<int>& nums, int target){
+    map<int,int> myHashMap;
+    int first,second;
+    first = second = 0;
+    for(int i=0;i<nums.size();i++){
+        if(myHashMap.find(nums[i])!=myHashMap.end()){
+            first = myHashMap[nums[i]];
+            second = i+1;
+            break;
+        }
+        myHashMap[target - nums[i]] = i+1;
+    }
+    if(first>second){
+        int tmp = first;
+        first = second;
+        second = tmp;
+    }
+    vector<int> sums;
+    sums.push_back(first);
+    sums.push_back(second);
+    return sums;
+}
+
+string Solution67::addBinary(string a, string b){
     string longerString,shorterString;
     longerString = a.length()>b.length()?a:b;
     shorterString = a.length()>b.length()?b:a;
@@ -48,3 +70,4 @@ string Solution67::addBinary(string a, string b)
     
     return outputString;
 }
+
