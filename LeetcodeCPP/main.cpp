@@ -15,7 +15,7 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     map<string,RunTestCaseFunction> testCasesMap;
     testCasesMap["TestCase67"] = &TestCase67::RunTestCase;
-    
+	testCasesMap["TestCase68"] = &TestCase68::RunTestCase;
     string inputStr = "a";
     while (inputStr.compare("q") != 0) {
         cout<<"\nInput Problem Index To Run Test Case, Input 'Q' To Exit.\n";

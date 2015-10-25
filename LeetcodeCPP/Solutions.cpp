@@ -8,6 +8,12 @@
 
 #include "Solutions.hpp"
 
+vector<string> Solution68::fullJustify(vector<string>& words, int maxWidth)
+{
+	vector<string> r;
+	return r;
+}
+
 string Solution67::addBinary(string a, string b)
 {
     string longerString,shorterString;

@@ -14,3 +14,4 @@ public:
 };
 
 class TestCase67:public TestCaseBase {public: static void RunTestCase();};
+class TestCase68 :public TestCaseBase { public: static void RunTestCase(); };
