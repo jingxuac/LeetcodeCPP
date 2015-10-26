@@ -9,6 +9,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <map>
+#include <string>
 #include <vector>
 
 using namespace std;

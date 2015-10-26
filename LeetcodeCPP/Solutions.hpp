@@ -17,3 +17,8 @@ class Solution67 {
 public:
     static string addBinary(string a, string b);
 };
+
+class Solution68 {
+public:
+    static vector<string> fullJustify(vector<string>& words, int maxWidth);
+};

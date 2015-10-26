@@ -71,3 +71,73 @@ string Solution67::addBinary(string a, string b){
     return outputString;
 }
 
+vector<string> Solution68::fullJustify(vector<string>& words, int maxWidth){
+    if (words.size()==0) {
+        string output = "";
+        for (int i=0; i<maxWidth; i++) {
+            output+=" ";
+        }
+        vector<string> out;
+        out.push_back(output);
+        return out;
+    }
+    
+    vector<string> currentLineWords;
+    int currentLineLengthWordsAndSpaces=0;
+    vector<string> output;
+    for (vector<string>::iterator iter = words.begin(); iter!=words.end(); iter++) {
+        string currentWord = *iter;
+        if (currentLineLengthWordsAndSpaces+currentWord.length()+1>maxWidth&&currentLineWords.size()!=0) {
+            //Goto Another Line
+            string currentLineOutput = *currentLineWords.begin();
+            if (currentLineWords.size()>1) {
+                float spacesToAdd = maxWidth - currentLineLengthWordsAndSpaces;
+                float spacesCount = (int)currentLineWords.size()-1;
+                for (vector<string>::iterator lineIter = currentLineWords.begin()+1;lineIter!=currentLineWords.end(); lineIter++) {
+                    int spacesAfterThis = spacesToAdd/spacesCount;
+                    float spacesAfterThisF =spacesToAdd/spacesCount;
+                    if (spacesAfterThisF-spacesAfterThis>0) {
+                        spacesAfterThis++;
+                    }
+                    for (int i=0; i<spacesAfterThis; i++) {
+                        currentLineOutput+=" ";
+                        spacesToAdd--;
+                    }
+                    spacesCount--;
+                    currentLineOutput+=*lineIter;
+                }
+            }
+            int numSpacesLeft = maxWidth - (int)currentLineOutput.length();
+            for (int i=0; i<numSpacesLeft; i++) {
+                currentLineOutput+=" ";
+            }
+            output.push_back(currentLineOutput);
+            currentLineWords.clear();
+            currentLineLengthWordsAndSpaces = 0;
+        }
+        //Add This Word
+        if (currentLineWords.size()==0) {
+            currentLineLengthWordsAndSpaces+=currentWord.length();
+            currentLineWords.push_back(currentWord);
+        }else{
+            currentLineLengthWordsAndSpaces+=currentWord.length()+1;
+            currentLineWords.push_back(" "+currentWord);
+        }
+    }
+    if(currentLineWords.size()!=0){
+        string currentLineOutput = *currentLineWords.begin();
+        if (currentLineWords.size()>1) {
+            for (vector<string>::iterator lineIter = currentLineWords.begin()+1;lineIter!=currentLineWords.end(); lineIter++) {
+                currentLineOutput+=*lineIter;
+            }
+        }
+        int numSpacesLeft = maxWidth - (int)currentLineOutput.length();
+        for (int i=0; i<numSpacesLeft; i++) {
+            currentLineOutput+=" ";
+        }
+        output.push_back(currentLineOutput);
+        currentLineWords.clear();
+        currentLineLengthWordsAndSpaces = 0;
+    }
+    return output;
+}

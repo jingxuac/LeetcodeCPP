@@ -35,3 +35,24 @@ void TestCase67::RunTestCase(){
     string f = "1";
     cout<<"\nInput:"<<e<<","<<f<<"\nOutput:"<<Solution67::addBinary(e,f)<<"\n";
 }
+
+void TestCase68::RunTestCase() {
+	vector<string> input = { "This", "is", "an", "example", "of", "text", "justification" };
+	vector<string> output = Solution68::fullJustify(input, 16);
+	cout << "\nInput:\n";
+	for (vector<string>::iterator iter = input.begin(); iter != input.end(); ++iter)
+		cout << *iter << endl;
+	cout << "\nOutput:\n";
+	for (vector<string>::iterator iter = output.begin(); iter != output.end(); ++iter)
+		cout << *iter << endl;
+    
+    vector<string> input1 = { "" };
+    vector<string> output1 = Solution68::fullJustify(input1, 0);
+    cout << "\nInput:\n";
+    for (vector<string>::iterator iter = input1.begin(); iter != input1.end(); ++iter)
+        cout << *iter << endl;
+    cout << "\nOutput:\n";
+    for (vector<string>::iterator iter = output1.begin(); iter != output1.end(); ++iter)
+        cout << *iter << endl;
+}
+

@@ -14,6 +14,7 @@ typedef void(*RunTestCaseFunction)();
 int main(int argc, const char * argv[]) {
     // insert code here...
     map<string,RunTestCaseFunction> testCasesMap;
+    testCasesMap["TestCase1"] = &TestCase1::RunTestCase;
     testCasesMap["TestCase67"] = &TestCase67::RunTestCase;
 	testCasesMap["TestCase68"] = &TestCase68::RunTestCase;
     string inputStr = "a";
