@@ -31,6 +31,81 @@ vector<int> Solution1::twoSum(vector<int>& nums, int target){
     return sums;
 }
 
+Solution2::ListNode* Solution2::addTwoNumbers(ListNode* l1, ListNode* l2) {
+    int initialValue = (l1->val + l2->val)%10;
+    int initialCarry = (l1->val + l2->val)/10;
+    
+    ListNode * outPut = new ListNode(initialValue);
+    int carry=initialCarry;
+    int value = 0;
+    ListNode * newNode = outPut;
+    
+    l1 = l1->next;
+    l2 = l2->next;
+    while(l1!=NULL||l2!=NULL){
+        int l1n = l1!=NULL?l1->val:0;
+        int l2n = l2!=NULL?l2->val:0;
+        
+        value = (l1n + l2n + carry)%10;
+        carry = (l1n + l2n + carry)/10;
+        ListNode * temp = new ListNode(value);
+        newNode->next = temp;
+        newNode = newNode->next;
+        if(l1!=NULL){
+            l1 = l1->next;
+        }
+        if(l2!=NULL){
+            l2 = l2->next;
+        }
+    }
+    if(carry!=0){
+        ListNode * temp = new ListNode(carry);
+        newNode->next = temp;
+        newNode = newNode->next;
+    }
+    return outPut;
+}
+
+int Solution3::lengthOfLongestSubstring(string s) {
+    map<char,int> characterIndexMap;
+    int longestSubstringLength = 1;
+    int currentSubstringLength = 0;
+    int currentSubstringStartLocation = 0;
+    if(s.length()==0){
+        return 0;
+    }
+    
+    for(int i=0;i<s.length();i++){
+        char charAtI = s[i];
+        
+        map<char,int>::iterator charFinder;
+        charFinder = characterIndexMap.find(charAtI);
+        if(charFinder==characterIndexMap.end()){
+            //Not Found
+            characterIndexMap.insert(pair<char,int>(charAtI,i));
+            currentSubstringLength++;
+        }else{
+            //Found
+            longestSubstringLength = currentSubstringLength>longestSubstringLength?currentSubstringLength:longestSubstringLength;//UpdateLongestSubstring
+            int repeatCharPosition = charFinder->second;//GetRepeatCharPosition
+            for(int j=currentSubstringStartLocation;j<=repeatCharPosition;j++){
+                characterIndexMap.erase(s[j]);
+            }
+            characterIndexMap.insert(pair<char,int>(charAtI,i));
+            currentSubstringLength = i-repeatCharPosition;
+            currentSubstringStartLocation = repeatCharPosition+1;
+        }
+    }
+    longestSubstringLength = currentSubstringLength>longestSubstringLength?currentSubstringLength:longestSubstringLength;
+    return longestSubstringLength;
+}
+
+double Solution4::findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2){
+    
+    
+    return 0;
+}
+
 string Solution67::addBinary(string a, string b){
     string longerString,shorterString;
     longerString = a.length()>b.length()?a:b;
